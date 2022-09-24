@@ -10,16 +10,19 @@
     "generate": "nuxi generate"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.26.2",
-    "@iconify-json/carbon": "^1.1.7",
-    "@iconify-json/twemoji": "^1.1.5",
     "@nuxtjs/color-mode": "^3.1.4",
     "@pinia/nuxt": "^0.4.1",
-    "@unocss/nuxt": "^0.45.13",
     "@vueuse/nuxt": "^9.1.1",
-    "eslint": "^8.23.0",
     "nuxt": "^3.0.0-rc.8",
-    "pinia": "^2.0.21",
+    "pinia": "^2.0.22",
     "typescript": "^4.8.2"
+  },
+  "dependencies": {
+    "@mdi/font": "^7.0.96",
+    "axios": "^0.27.2",
+    "highlight.js": "^11.6.0",
+    "sass": "^1.55.0",
+    "vue-i18n": "^9.2.2",
+    "vuetify": "^3.0.0-beta.11"
   }
 }

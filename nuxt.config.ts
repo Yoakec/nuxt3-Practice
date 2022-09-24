@@ -1,21 +1,34 @@
 import { defineNuxtConfig } from 'nuxt'
 
 export default defineNuxtConfig({
+  css: ['vuetify/lib/styles/main.sass'],
   modules: [
     '@vueuse/nuxt',
-    '@unocss/nuxt',
+    // '@unocss/nuxt',
     '@pinia/nuxt',
-    '@nuxtjs/color-mode',
+    '@nuxtjs/color-mode'
   ],
   experimental: {
     reactivityTransform: true,
-    viteNode: false,
+    viteNode: false
   },
-  unocss: {
-    preflight: true,
+  vite: {
+    logLevel: 'info',
+    optimizeDeps: {
+      include: ['vue', 'pinia']
+    },
+    define: {
+      'process.env.DEBUG': 'false'
+    }
   },
+  // unocss: {
+  //   preflight: true,
+  // },
   colorMode: {
-    classSuffix: '',
+    classSuffix: ''
+  },
+  build: {
+    transpile: ['vuetify']
   },
   // https://github.com/nuxt/framework/issues/6204#issuecomment-1201398080
   hooks: {
@@ -25,6 +38,10 @@ export default defineNuxtConfig({
         // https://github.com/nuxt/framework/issues/6204
         config.build.rollupOptions.output.inlineDynamicImports = true
       }
-    },
+    }
   },
+  intlify: {
+    localeDir: 'locales',
+    vueI18n: {}
+  }
 })
